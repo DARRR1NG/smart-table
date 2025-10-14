@@ -5,7 +5,6 @@ export const initPagination = ({pages, fromRow, toRow, totalRows}, createPage) =
     const pageTemplate = pages.firstElementChild.cloneNode(true);    // в качестве шаблона берём первый элемент из контейнера со страницами
     pages.firstElementChild.remove();                                // и удаляем его (предполагаем, что там больше ничего, как вариант, можно и всё удалить из pages)
 
-    return (data, state, action) => {
         // @todo: #2.1 — посчитать количество страниц, объявить переменные и константы
         let pageCount;
 
@@ -39,13 +38,12 @@ export const initPagination = ({pages, fromRow, toRow, totalRows}, createPage) =
 
         // @todo: #2.5 — обновить статус пагинации
         fromRow.textContent = (page - 1) * limit + 1;                    // С какой строки выводим
-        toRow.textContent = Math.min((page * limit), data.length);    // До какой строки выводим, если это последняя страница, то отображаем оставшееся количество
-        totalRows.textContent = data.length;                                // Сколько всего строк выводим на всех страницах вместе (после фильтрации будет меньше)
+        toRow.textContent = Math.min((page * limit), total);    // До какой строки выводим, если это последняя страница, то отображаем оставшееся количество
+        totalRows.textContent = total;                                // Сколько всего строк выводим на всех страницах вместе (после фильтрации будет меньше)
     }
 
         return {
             updatePagination,
             applyPagination
         }; 
-    }
 }
