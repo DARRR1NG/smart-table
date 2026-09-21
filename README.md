@@ -21,5 +21,5 @@
 11. `vite.config.js` - файл конфигурации сборщика.
 
 ## :heavy_check_mark: Инструкция по запуску
-Перейти по ссылке: :point_right:<a href='darrr1ng.github.io/smart-table/'> тык </a> :point_left:
+Перейти по ссылке: :point_right:<a href="https://darrr1ng.github.io/smart-table/"> тык </a> :point_left:
 
